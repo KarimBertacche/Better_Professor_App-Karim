@@ -20,7 +20,7 @@ router.post('/login', (req, res) => {
         .catch(error => {
             res.status(500).json(error);
         });
-})
+});
 
 function generateToken(user) {
     const payload = {
@@ -35,6 +35,11 @@ function generateToken(user) {
 
     const secret = jwt.sign{
         payload,
-        process.env.NODE_ENV === 'development' ? 'devsecrets' : 
+        process.env.NODE_ENV === 'development' ? 'devsecrets' : process.env.SECRET,
+        options,
     }
-}
+
+    return result;
+};
+
+module.exports = router;
