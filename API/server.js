@@ -1,13 +1,22 @@
-const express = require('express');
+require('dotenv').config();
 
-const PostRouter = require('./posts/post-router.js');
+const express = require('express');
+const helmet = require('helmet');
+const cors = require('cors');
 
 const server = express();
 
+const PostRouter = require('./posts/post-router.js');
+
+
 server.use(express.json());
+server.use(helmet());
+server.use(cors());
 
 server.use('/api/posts', PostRouter);
 
 server.get('/', (req, res) => {
-    res.send('<h1>Welcome to WorkFlow</h1>');
+    res.sendFile(path.join(_dirname + "./index.js");
 });
+
+module.exports = server;
