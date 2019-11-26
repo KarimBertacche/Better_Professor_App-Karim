@@ -9,7 +9,15 @@ exports.up = function(knex) {
             table.string('password', 128).notNullable();
             table.string('role', 128).notNullable();
         })
-        .createTable('')
+        .createTable('Projects', table => {
+            table.increments();
+            table.string('project_name', 128);
+        })
+        .createTable('Messages', table => {
+            table.increments();
+            table.string('timestamp').defaultTo(JSON.stringify(new Date()));
+            table.integer('user_id').unsigned().notNullable().reference('id').inTable('users');
+        })
 
 };
 
