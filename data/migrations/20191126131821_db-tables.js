@@ -27,5 +27,9 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('Users');
+  return knex.schema
+    .dropTableIfExists('Users');
+    .dropTableIfExists('Projects');
+    .dropTableIfExists('Messages');
+    .dropTableIfExists('Notes');
 };
