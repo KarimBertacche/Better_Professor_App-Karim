@@ -18,7 +18,12 @@ exports.up = function(knex) {
             table.string('timestamp').defaultTo(JSON.stringify(new Date()));
             table.integer('user_id').unsigned().notNullable().reference('id').inTable('users');
         })
-
+        .createTable('Notes', table => {
+            table.increments();
+            table.string('timestamp').defaultTo(JSON.stringify(new Date()));
+            table.string('note', 128).notNullable();
+            table.string('user_id', 128)..unsigned().notNullable().reference('id').inTable('users');
+        })
 };
 
 exports.down = function(knex) {
