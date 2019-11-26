@@ -14,9 +14,10 @@ server.use(helmet());
 server.use(cors());
 
 server.use('/api/posts', PostRouter);
+server.get('*', handleRequest);
 
-server.get('/', (req, res) => {
+function handleRequest(req, res) {
     res.sendFile(path.join(_dirname + "./index.js");
-});
+}
 
 module.exports = server;
