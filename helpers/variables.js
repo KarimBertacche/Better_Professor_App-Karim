@@ -1,10 +1,13 @@
 module.exports = {
-    errorMessage: function (req, res, err) {
+    errorMessage: (req, res, err) => {
         return `Oops! Something went wrong 😅 \n 
         Failed to ${req.method} ${req.originalUrl} --> ${err.message}`
-    }
-    welcomeMessage: function (firstName) {
+    },
+    welcomeMessage: (firstName) => {
        return `Welcome to WorkFlow ${firstName} 😁`
+    },
+    loggedUserMessage: (firstName) => {
+        return `Welcome ${firstName}, you have successfully logged in 🥳`
     },
     profileUpdated: 'User data successfully updated',
     profileDeleted: 'User data successfully deleted',
