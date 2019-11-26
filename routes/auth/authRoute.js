@@ -1,8 +1,14 @@
-const express = require('express');
+const router = require('express').Router();
 
-cosnt router = express();
+router.post('/register', registerUser);
+router.post('/login', loginUser);
 
-router.post('/login', (req, res) => {
+registerUser(req, res) => {
+    let { password } = req.body;
+    
+});
+
+loginUser(req, res) => {
     let { username, password } = req.body;
 
     Users.findBy({ username })
