@@ -18,7 +18,7 @@ registerUser(req, res) => {
     req.body.password = hash;
 
     Users.addUser(req.body)
-        .then(addedUser =>
+        .then(addedUser => {
             let token = generateToken(addedUser);
             delete addedUser.password;
             res.status(201).json({
@@ -26,13 +26,13 @@ registerUser(req, res) => {
                 token,
                 addedUser
             });
-        )
-        .catch(error =>
+        })
+        .catch(error => {
             res.status(500).json({
                 message: errorMessage,
                 error: error.message
             });
-        );
+        });
 });
 
 loginUser(req, res) => {
