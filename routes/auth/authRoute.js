@@ -38,13 +38,16 @@ registerUser(req, res) => {
 loginUser(req, res) => {
     let { username, password } = req.body;
 
-    Users.findBy({ username })
-        .then(user => {
-            if(user && bcrypt.compareSync(password, user.password)) {
-                const token = generateToken(user);
+    Users.findUserBy({ username })
+        .then(foundUser => {
+            if(foundUser && bcrypt.compareSync(password, foundUser.password)) {
+                const token = generateToken(foundUser);
+                delete foundUser.password;
+
                 res.status(200).json({
                     message: loggedUserMessage,
-                    token: token,
+                    token,
+                    foundUser
                 })
             } else {
                 res.status(401).json({ message: invalidCredetials });
