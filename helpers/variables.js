@@ -13,9 +13,10 @@ module.exports = {
     invalidCredentials: 'Oops! Invalid Credentials',
     invalidStudentId: 'Oops! You have provided an invalid student id, try again',
     noStudentMessages: 'Oops! It looks like there are no messages for the student with the specified id',
-    missingCredentials: 'Sorry, no credentials have been provided',
     existingEmail: 'Email already in use',
+    missingCredentials: 'Sorry, no credentials have been provided',
     missingFields: 'You are missing some required fields!',
+    missingProject: 'Oops! Seems like there are no projects in the database.',
     missingBodyData: 'The request body misses some mandatory fields, please re-submit',
     regexMail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
