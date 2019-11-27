@@ -11,6 +11,7 @@ module.exports = {
     },
     invalidToken: 'Token validation failed!',
     invalidCredentials: 'Oops! Invalid Credentials',
+    invalidStudentId: 'Oops! You have provided an invalid student id, try again',
     missingCredentials: 'Sorry, no credentials have been provided',
     existingEmail: 'Email already in use',
     missingFields: 'You are missing some required fields!',
