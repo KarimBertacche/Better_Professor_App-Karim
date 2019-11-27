@@ -6,11 +6,11 @@ module.exports = {
 }
 
 addUser(user) => {
-    return db('users').insert(user).returning('id').then(([id]) => {
+    return db('Users').insert(user).returning('id').then(([id]) => {
         return this.findUserBy({ id });
     });
 };
 
 findUserBy(filter) => {
-    return db('users').where(filter).first();
+    return db('Users').where(filter).first();
 };
