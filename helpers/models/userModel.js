@@ -2,6 +2,7 @@ const db = require('../config/db-config');
 
 module.exports = {
     addUser,
+    findUserBy
 }
 
 addUser(user) => {
