@@ -2,15 +2,27 @@ const db = require('../config/db-config');
 
 module.exports = {
     addUser,
-    findUserBy
+    findAllUsers,
+    findUserBy,
+    removeUser
 }
 
-addUser(user) => {
+function addUser(user) {
     return db('Users').insert(user).returning('id').then(([id]) => {
         return this.findUserBy({ id });
     });
 };
 
-findUserBy(filter) => {
+function findAllUsers() {
+    return db('Users');
+}
+
+
+function findUserBy(filter) {
     return db('Users').where(filter).first();
 };
+
+function removeUser(user_id) {
+    return db('Users').where({ id: user_id }).del();
+}
+

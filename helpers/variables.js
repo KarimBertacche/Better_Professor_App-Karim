@@ -21,6 +21,7 @@ module.exports = {
     missingFields: 'You are missing some required fields!',
     missingProject: 'Oops! Seems like there are no projects in the database.',
     missingStudents: 'Oops! Seems like there are no students in the database.',
+    missingUsers: 'Oops! Seems like there are no users in the database.',
     missingBodyData: 'The request body misses some mandatory fields, please re-submit.',
     newEntry: 'New entry successfully created!',
     deleteEntry: (id) => {
