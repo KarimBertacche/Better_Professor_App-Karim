@@ -2,7 +2,7 @@ const db = require('../../config/db-config');
 
 module.exports = {
     addStudent,
-    findStudent,
+    findAllStudents,
     findStudentById,
     findStudentProjectById,
     removeStudent
@@ -14,7 +14,7 @@ function addStudent(student) {
     });
 }
 
-function findStudent() {
+function findAllStudents() {
     return db('Students');
 }
 

@@ -10,14 +10,22 @@ module.exports = {
         return `Welcome ${firstName}, you have successfully logged in 🥳`
     },
     invalidToken: 'Token validation failed!',
-    invalidCredentials: 'Oops! Invalid Credentials',
-    invalidStudentId: 'Oops! You have provided an invalid student id, try again',
-    noStudentMessages: 'Oops! It looks like there are no messages for the student with the specified id',
-    existingEmail: 'Email already in use',
-    missingCredentials: 'Sorry, no credentials have been provided',
+    invalidCredentials: 'Oops! Invalid Credentials.',
+    invalidStudentId: 'Oops! You have provided an invalid student id, try again.',
+    noStudentMessages: 'Oops! It looks like there are no messages for the student with the specified id.',
+    noStudentProjects: (id) => {
+        return `There are no projects associated with the student id ${id}.`
+    }
+    existingEmail: 'The email is already been used.',
+    missingCredentials: 'Sorry, no credentials have been provided.',
     missingFields: 'You are missing some required fields!',
     missingProject: 'Oops! Seems like there are no projects in the database.',
-    missingBodyData: 'The request body misses some mandatory fields, please re-submit',
+    missingStudents: 'Oops! Seems like there are no students in the database.',
+    missingBodyData: 'The request body misses some mandatory fields, please re-submit.',
+    newEntry: 'New entry successfully created!',
+    deleteEntry: (id) => {
+        return `Successfully deleted entry with id of ${id}!`
+    },
     regexMail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 
@@ -28,7 +36,6 @@ module.exports = {
     supplyToken: 'Please supply token!',
     invalidEmail: 'Not a valid email address format',
     noAccess: 'You are not authorised to access or modify this information',
-    newEntry: 'New entry successfully created!',
     updatedEntry: 'Entry successfully updated!',
     entryRemoved: function (value) {
        return `${value} has been successfully removed from your list`
