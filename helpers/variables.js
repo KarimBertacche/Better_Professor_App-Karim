@@ -9,13 +9,19 @@ module.exports = {
     loggedUserMessage: (firstName) => {
         return `Welcome ${firstName}, you have successfully logged in 🥳`
     },
+    invalidToken: 'Token validation failed!',
+    invalidCredentials: 'Oops! Invalid Credentials',
+    missingCredentials: 'Sorry, no credentials have been provided',
+    existingEmail: 'Email already in use',
+    missingFields: 'You are missing some required fields!',
+    missingBodyData: 'The request body misses some mandatory fields, please re-submit',
+    regexMail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
+
+
+
     profileUpdated: 'User data successfully updated',
     profileDeleted: 'User data successfully deleted',
-    alreadyInUse: 'Email already in use',
-    invalidCredetials: 'Oops! Invalid Credentials',
-    missingFields: 'You are missing some required fields!',
-    noBodyData: 'Please supply data in the request body!',
-    tokenInvalid: 'Token validation failed!',
     supplyToken: 'Please supply token!',
     invalidEmail: 'Not a valid email address format',
     noAccess: 'You are not authorised to access or modify this information',
@@ -25,5 +31,4 @@ module.exports = {
        return `${value} has been successfully removed from your list`
     },
     limitReached: 'Maximum class size reached',
-    mailRegex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
  }
