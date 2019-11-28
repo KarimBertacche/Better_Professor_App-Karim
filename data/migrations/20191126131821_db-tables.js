@@ -19,11 +19,12 @@ exports.up = function(knex) {
         })
         .createTable('Messages', table => {
             table.increments();
+            table.string('message', 1024).notNullable();
             table.string('timestamp', 128).defaultTo(JSON.stringify(new Date()));
             table.integer('user_id').unsigned().notNullable().references('id').inTable('Users')
-                .onUpdate('CASCADE').onDelete('CASCADE');
+            .onUpdate('CASCADE').onDelete('CASCADE');
             table.integer('student_id').unsigned().notNullable().references('id').inTable('Students')
-                .onUpdate('CASCADE').onDelete('CASCADE');
+            .onUpdate('CASCADE').onDelete('CASCADE');
             table.boolean('send_to_self').defaultTo(false).notNullable();
         });
 };
