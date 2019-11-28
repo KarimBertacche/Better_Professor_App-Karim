@@ -5,7 +5,7 @@ const { errorMessage, missingProject } = require('../../helpers/variables');
 
 router.get('/', getProjects);
 
-function getProject(req, res) {
+function getProjects(req, res) {
     Projects.findAllProjects()
         .then(projects => {
             if (projects && projects.length > 0) {
@@ -51,4 +51,4 @@ function getDeadlines(projects, req, res) {
         });
 }
 
-export.modules = router;
+module.exports = router;

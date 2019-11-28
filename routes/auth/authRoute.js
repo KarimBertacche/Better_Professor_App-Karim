@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const Users = require('../../helpers/userModel');
+const Users = require('../../helpers/models/usersModel');
 const { generateToken } = require('../../helpers/tokenize');
 const { 
     errorMessage, 
@@ -12,7 +12,7 @@ const {
 router.post('/register', registerUser);
 router.post('/login', loginUser);
 
-registerUser(req, res) => {
+function registerUser(req, res) {
     let { password } = req.body;
     const hash = bcrypt.hashSync(password, 12);
     req.body.password = hash;
@@ -33,9 +33,9 @@ registerUser(req, res) => {
                 error: error.message
             });
         });
-});
+};
 
-loginUser(req, res) => {
+function loginUser(req, res) {
     let { username, password } = req.body;
 
     Users.findUserBy({ username })
@@ -59,6 +59,6 @@ loginUser(req, res) => {
                 error: error.message
             });
         });
-});
+};
 
 module.exports = router;

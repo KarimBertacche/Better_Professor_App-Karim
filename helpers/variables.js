@@ -15,7 +15,7 @@ module.exports = {
     noStudentMessages: 'Oops! It looks like there are no messages for the student with the specified id.',
     noStudentProjects: (id) => {
         return `There are no projects associated with the student id ${id}.`
-    }
+    },
     existingEmail: 'The email is already been used.',
     missingCredentials: 'Sorry, no credentials have been provided.',
     missingFields: 'You are missing some required fields!',
@@ -27,19 +27,17 @@ module.exports = {
     deleteEntry: (id) => {
         return `Successfully deleted entry with id of ${id}!`
     },
-    regexMail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-
-
-
-
     profileUpdated: 'User data successfully updated',
     profileDeleted: 'User data successfully deleted',
-    supplyToken: 'Please supply token!',
     invalidEmail: 'Not a valid email address format',
-    noAccess: 'You are not authorised to access or modify this information',
-    updatedEntry: 'Entry successfully updated!',
-    entryRemoved: function (value) {
-       return `${value} has been successfully removed from your list`
-    },
-    limitReached: 'Maximum class size reached',
- }
+    regexMail: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+}
+
+//NOT YET USED VARIABLES
+// supplyToken: 'Please supply token!',
+// noAccess: 'You are not authorised to access or modify this information',
+// updatedEntry: 'Entry successfully updated!',
+// entryRemoved: function (value) {
+//    return `${value} has been successfully removed from your list`
+// },
+// limitReached: 'Maximum class size reached',

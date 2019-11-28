@@ -4,7 +4,7 @@ const secret = require('../config/secrets');
 const {
     missingCredentials,
     invalidToken
-} = require('../../helpers/variables');
+} = require('../helpers/variables');
 
 module.exports = (req, res, next) => {
     const token = req.headers.authorization;

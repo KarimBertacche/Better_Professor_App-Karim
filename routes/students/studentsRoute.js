@@ -13,7 +13,7 @@ const {
 router.get('/:id/projects', getStudentProjects);
 router.get('/:id', validateStudentId, getStudentById);
 router.get('/', getStudents);
-router.post('/', validateStudentId, insertNewStudent):
+router.post('/', validateStudentId, insertNewStudent);
 router.delete('/:id', validateStudentId, deleteStudent);
 
 function getStudents(req, res) {
@@ -34,7 +34,7 @@ function getStudents(req, res) {
         });
 }
 
-function getStudentsById(req, res) {
+function getStudentById(req, res) {
     const { id } = req.params;
 
     Students.findStudentById(id)

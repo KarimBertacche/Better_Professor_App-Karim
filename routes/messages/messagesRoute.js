@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-const Messages = require('../helpers/models/messagesModel');
-const validateStudentId = require('../middlewares/validateStudentId');
-const validateMessage = require('../middlewares/validateMessage');
+const Messages = require('../../helpers/models/messagesModel');
+const validateStudentId = require('../../middlewares/validateStudentId');
+const validateMessage = require('../../middlewares/validateMessage');
 const { 
     errorMessage, 
     invalidToken,
@@ -44,7 +44,7 @@ function getMessagesByStudentId(req, res) {
                 message: errorMessage
             });
         });
-});
+};
 
 function addNewMessage(req, res) {
     const { user_id } = req.decodedToken;
@@ -61,7 +61,6 @@ function addNewMessage(req, res) {
                 message: errorMessage
             });
         });
-});
+};
 
 module.exports = router;
-

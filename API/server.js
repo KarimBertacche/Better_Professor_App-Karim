@@ -9,10 +9,10 @@ const server = express();
 const logger = require('../middlewares/logger');
 const restricted = require('../middlewares/restricted');
 const authRouter = require('../routes/auth/authRoute');
-const usersRouter = require('../routes/users/usersRouter');
-const studentsRouter = require('../routes/students/studentsRouter');
-const projectsRouter = require('./routes/projects/projectsRouter');
-const messagesRouter = require('./routes/messages/messagesRouter');
+const usersRouter = require('../routes/users/usersRoute');
+const studentsRouter = require('../routes/students/studentsRoute');
+const projectsRouter = require('../routes/projects/projectsRoute');
+const messagesRouter = require('../routes/messages/messagesRoute');
 
 server.use(express.json());
 server.use(helmet());
@@ -27,7 +27,7 @@ server.use('/messages', restricted, messagesRouter);
 server.get('*', handleRequest);
 
 function handleRequest(req, res) {
-    res.sendFile(path.join(_dirname + "./index.js");
+    res.sendFile(path.join(_dirname + "./index.js"));
 }
 
 module.exports = server;
