@@ -1,14 +1,17 @@
 {
-  "name": "work_flow-api",
+  "name": "better_professor-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Better professor app to keep track of students and their progress",
   "main": "index.js",
   "scripts": {
-    "server": "node index.js"
+    "server": "nodemon index.js",
+    "test": "cross-env DB_ENV=testing jest --watch",
+    "start": "node index.js",
+    "migrate": "knex migrate:latest",
+    "seed": "knex seed:run"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Karim Bertacche",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -20,6 +23,9 @@
     "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "cross-env": "^6.0.3",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4",
+    "supertest": "^4.0.2"
   }
 }
