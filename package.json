@@ -1,7 +1,7 @@
 {
   "name": "better_professor-api",
   "version": "1.0.0",
-  "description": "Better professor app to keep track of students and their progress",
+  "description": "Better professor app, an application designed to keep track of students and their progress",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
