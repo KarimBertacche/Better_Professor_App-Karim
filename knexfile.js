@@ -36,16 +36,10 @@ module.exports = {
     }
   },
   production: {
-    client: 'postgresql',
-    useNullAsDefault: true,
+    client: 'pg',
     connection: process.env.DATABASE_URL,
-    pool: {
-      min: 2,
-      max: 10
-    },
     migrations: {
-      directory: './data/migrations',
-      tableName: 'database_migrations'
+      directory: './data/migrations'
     },
     seeds: {
       directory: './data/seeds'
