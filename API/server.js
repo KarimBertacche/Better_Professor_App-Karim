@@ -24,10 +24,10 @@ server.use('/users', restricted, usersRouter);
 server.use('/students', restricted, studentsRouter);
 server.use('/projects', restricted, projectsRouter);
 server.use('/messages', restricted, messagesRouter);
-server.get('*', handleRequest);
+server.get('/', handleRequest);
 
 function handleRequest(req, res) {
-    res.sendFile(path.join(_dirname + "./index.js"));
+    res.sendFile(path.join(_dirname + "./index.html"));
 }
 
 module.exports = server;
