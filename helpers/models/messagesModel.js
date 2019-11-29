@@ -9,9 +9,9 @@ module.exports = {
 
 function findMessages() {
     return db('Messages AS m')
-        .select("u.username AS sender","s.name AS recipient", "m.timestamp", "text");
+        .select("u.username AS sender","s.name AS recipient", "m.timestamp", "text")
         .leftJoin("Users AS u", "u.id", "m.user_id")
-        .leftJoin("Students AS s", "s.id", "m.student_id")
+        .leftJoin("Students AS s", "s.id", "m.student_id");
 }
 
 function findMessageById(id){
