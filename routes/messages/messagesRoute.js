@@ -6,16 +6,18 @@ const validateMessage = require('../../middlewares/validateMessage');
 const { 
     errorMessage, 
     invalidToken,
-    noStudentMessages
+    noStudentMessages,
+    deleteEntry
 } = require('../../helpers/variables');
 
 router.get('/students/:id', validateStudentId, getMessagesByStudentId);
 router.get('/', getMessages);
 router.post('/', validateMessage, addNewMessage);
+router.delete('/:id', deleteMessage);
 
 
 function getMessages(req, res) {
-    Messages.find()
+    Messages.findMessages()
         .then(messages => {
             res.status(200).json(messages);
         })
@@ -29,7 +31,7 @@ function getMessages(req, res) {
 function getMessagesByStudentId(req, res) {
     const { id } = req.params;
 
-    Messages.findById(id)
+    Messages.findMessageById(id)
         .then(studentMessages => {
             if (studentMessages) {
                 res.status(200).json(studentMessages);
@@ -52,7 +54,7 @@ function addNewMessage(req, res) {
     const message = { text, timestamp, user_id, student_id};
     message.send_to_self = (req.newMessage.student_id) ? false : true;
 
-    Messages.add(message)
+    Messages.addMessage(message)
         .then(addedMessage => {
             res.status(201).json(addedMessage);
         })
@@ -62,5 +64,21 @@ function addNewMessage(req, res) {
             });
         });
 };
+
+function deleteMessage(req, res) {
+    const { id } = req.params;
+
+    Students.removeMessage(id)
+        .then(message => {
+            res.status(200).json({
+                message: deleteEntry(id)
+            });
+        })
+        .catch(error => {
+            res.status(500).json({
+                message: errorMessage
+            });
+        }); 
+}
 
 module.exports = router;
