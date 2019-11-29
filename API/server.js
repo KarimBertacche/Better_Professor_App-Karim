@@ -27,7 +27,7 @@ server.use('/students', restricted, studentsRouter);
 server.use('/projects', restricted, projectsRouter);
 server.use('/messages', restricted, messagesRouter);
 
-server.get('/', (req, res) {
+server.get('/', (req, res) => {
     try {
         res.sendFile(path.join(__dirname + "/index.html"));
     } catch(error) {
