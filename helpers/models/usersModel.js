@@ -8,7 +8,7 @@ module.exports = {
 }
 
 function addUser(user) {
-    return db('Users').insert(user).returning('id').then(([id]) => {
+    return db('Users').insert(user, 'id').returning('id').then(([id]) => {
         return this.findUserBy({ id });
     });
 };

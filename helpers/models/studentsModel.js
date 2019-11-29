@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function addStudent(student) {
-    return db('Students').insert(student).returning('id').then(([id]) => {
+    return db('Students').insert(student, 'id').returning('id').then(([id]) => {
         return this.findStudentById({ id });
     });
 }

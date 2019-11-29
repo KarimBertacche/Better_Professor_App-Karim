@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function add(project) {
-    return db('Projects').insert(project).returning('id').then(([id]) => {
+    return db('Projects').insert(project, 'id').returning('id').then(([id]) => {
         return this.findProjectBy({ id });
     });
 };
