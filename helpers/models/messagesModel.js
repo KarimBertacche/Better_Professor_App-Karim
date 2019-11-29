@@ -32,7 +32,10 @@ function findMessageById(id){
 
 async function addMessage(message) {
     const timestamp = JSON.stringify(new Date());
-    const [id] = await db('Messages').insert({ ...message, timestamp }, 'id');
+    const [id] = await db('Messages').insert({
+        ...message, 
+        timestamp 
+    }, 'id');
     
     return db('Messages').where({ id }).first();
 }
