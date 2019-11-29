@@ -48,11 +48,11 @@ function getMessagesByStudentId(req, res) {
 
 function addNewMessage(req, res) {
     const { user_id } = req.decodedToken;
-    const { message, timestamp, student_id }  = req.newMessage;
-    const text = { message, timestamp, user_id, student_id};
-    text.send_to_self = (req.newMessage.student_id) ? false : true;
+    const { text, timestamp, student_id }  = req.newMessage;
+    const message = { text, timestamp, user_id, student_id};
+    message.send_to_self = (req.newMessage.student_id) ? false : true;
 
-    Messages.add(text)
+    Messages.add(message)
         .then(addedMessage => {
             res.status(201).json(addedMessage);
         })

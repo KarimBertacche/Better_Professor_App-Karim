@@ -19,7 +19,7 @@ exports.up = function(knex) {
         })
         .createTable('Messages', table => {
             table.increments();
-            table.string('message', 1024).notNullable();
+            table.string('text', 1024).notNullable();
             table.string('timestamp', 128).defaultTo(JSON.stringify(new Date()));
             table.integer('user_id').unsigned().notNullable().references('id').inTable('Users')
             .onUpdate('CASCADE').onDelete('CASCADE');
